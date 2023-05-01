@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
+    public Collider2D collision;
 
     float horizontal;
 
@@ -66,6 +67,10 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             touchship = true;
+        }
+        else if(other.gameObject.CompareTag("WaterColllider"))
+        {
+            jump = false;
         }
         else
         {
