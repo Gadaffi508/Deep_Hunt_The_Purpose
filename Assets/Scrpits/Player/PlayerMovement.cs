@@ -45,6 +45,14 @@ public class PlayerMovement : MonoBehaviour
             ship.rb.velocity = new Vector2(horizontal * speed, ship.rb.velocity.y); // gemiyi hareket ettir
             transform.position = new Vector2(ship.transform.position.x,transform.position.y);
             rb.velocity = new Vector2(horizontal * 0, rb.velocity.y);
+            if (horizontal > 0 && isOnShip)
+            {
+                ship.transform.localScale = new Vector2(1, 1);
+            }
+            if (horizontal < 0 && isOnShip)
+            {
+                ship.transform.localScale = new Vector2(-1, 1);
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.B)) // "B" tuþuna basmayý býraktýðýnda
@@ -55,6 +63,14 @@ public class PlayerMovement : MonoBehaviour
         {
             ship.rb.velocity = new Vector2(horizontal * 0, ship.rb.velocity.y); // gemiyi hareket ettir
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        }
+        if (horizontal > 0)
+        {
+            transform.localScale = new Vector2(1,1);
+        }
+        if (horizontal < 0)
+        {
+            transform.localScale = new Vector2(-1, 1);
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
