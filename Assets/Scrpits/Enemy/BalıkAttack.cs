@@ -67,7 +67,7 @@ public class BalıkAttack : MonoBehaviour
 
             enemyAI.MovePlayer();
             EnemyAttack();
-            EnemyAI.speed = 4f;
+            EnemyAI.speed = 9f;
         }
         else
         {

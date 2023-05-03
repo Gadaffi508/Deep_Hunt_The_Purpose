@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         RandomX = Random.Range(-15f, 15f);
-        RandomY = Random.Range(-4f, 0.10f);
+        RandomY = Random.Range(-8f, -2f);
         nextPoint = new Vector2(RandomX, RandomY);
         target = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         if (dýstance <= 1)
         {
             RandomX = Random.Range(-9f, 10f);
-            RandomY = Random.Range(-4f, 0.10f);
+            RandomY = Random.Range(-8f, -2f);
             nextPoint = new Vector2(RandomX, RandomY);
             transform.position = Vector2.MoveTowards(transform.position, nextPoint, speed * Time.deltaTime);
         }
