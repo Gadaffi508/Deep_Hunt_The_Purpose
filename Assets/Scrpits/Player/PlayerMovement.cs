@@ -12,15 +12,20 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontal;
 
-    bool jump;
+    public bool jump;
     public float jumpAmount = 10;
 
     public BoatController ship; // gemi nesnesi
     private bool isOnShip = false; // karakterin gemide olup olmadýðýný kontrol eden deðiþken
     bool touchship = false;
 
+    [Header("Material")]
+    public GameObject Zýpkýn;
+
+
     void Start()
     {
+        Zýpkýn.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         ship = GameObject.FindGameObjectWithTag("boat").gameObject.GetComponent<BoatController>();
     }
@@ -28,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
+
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space) && jump==true)
         {
@@ -43,8 +50,7 @@ public class PlayerMovement : MonoBehaviour
         if (isOnShip && touchship == true) // karakter gemideyse
         {
             ship.rb.velocity = new Vector2(horizontal * speed, ship.rb.velocity.y); // gemiyi hareket ettir
-            transform.position = new Vector2(ship.transform.position.x,transform.position.y);
-            rb.velocity = new Vector2(horizontal * 0, rb.velocity.y);
+
             if (horizontal > 0 && isOnShip)
             {
                 ship.transform.localScale = new Vector2(1, 1);
@@ -59,10 +65,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isOnShip = false;
         }
-        if (!isOnShip) // karakter gemideyse
+        if (!isOnShip) // karakter gemide deðilse
         {
-            ship.rb.velocity = new Vector2(horizontal * 0, ship.rb.velocity.y); // gemiyi hareket ettir
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            ship.rb.velocity = new Vector2(0, ship.rb.velocity.y); // gemiyi hareket ettirmeme
         }
         if (horizontal > 0)
         {
@@ -75,22 +80,30 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("ground"))
+        if (other.gameObject.CompareTag("ground") || other.gameObject.CompareTag("boat"))
         {
             jump = true;
-        }
-        if (other.gameObject.CompareTag("boat"))
-        {
-            jump = true;
-            touchship = true;
         }
         else if(other.gameObject.CompareTag("WaterColllider"))
         {
             jump = false;
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("BoatController"))
+        {
+            jump = false;
+            touchship = true;
+        }
         else
         {
             touchship = false;
+        }
+        if (other.gameObject.CompareTag("material"))
+        {
+            Destroy(other.gameObject);
+            Zýpkýn.SetActive(true);
         }
     }
 }

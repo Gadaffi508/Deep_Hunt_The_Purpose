@@ -10,6 +10,9 @@ TagManager:
   - WaterColllider
   - "Bal\u0131k"
   - Deniz
+  - BoatController
+  - material
+  - "Z\u0131pk\u0131n"
   layers:
   - Default
   - TransparentFX
