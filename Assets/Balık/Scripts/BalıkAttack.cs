@@ -137,7 +137,17 @@ public class BalıkAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Deniz"))
         {
-            enemyRb.gravityScale = -1f;
+            //enemyRb.gravityScale = -1f;
         }
+    }
+    public Transform player;
+    public RectTransform mapRect;
+    public float mapScale = 700f;
+
+    void LateUpdate()
+    {
+        Vector2 playerPos = new Vector2(player.position.x, player.position.y);
+        Vector2 mapPos = new Vector2(playerPos.x / mapScale, playerPos.y / mapScale);
+        mapRect.anchoredPosition = mapPos;
     }
 }
