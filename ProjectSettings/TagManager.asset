@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - WaterColllider
+  - "Z\u0131pk\u0131n"
+  - boat
+  - BoatController
+  - material
+  - ground
+  - Enemy
+  - Deniz
+  - Map
+  - kule
   layers:
   - Default
   - TransparentFX
