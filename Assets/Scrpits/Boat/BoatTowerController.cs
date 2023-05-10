@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BoatTowerController : MonoBehaviour
 {
     public GameObject[] tower;
+    private bool _enabled = false;
     private void OnMouseDown()
     {
         GameObject[] towers = GameObject.FindGameObjectsWithTag("kule");
@@ -17,10 +19,23 @@ public class BoatTowerController : MonoBehaviour
         foreach (GameObject circle in tower)
         {
             circle.SetActive(true);
+            _enabled = true;
         }
 
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    private void LateUpdate()
+    {
+        if (Input.GetMouseButtonDown(1) && _enabled)
+        {
+            foreach (GameObject circle in tower)
+            {
+                circle.SetActive(false);
+                _enabled = false;
+            }
+        }
+
+    }
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("kuleA"))
         {
