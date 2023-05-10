@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
 --- !u!1 &38276675
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: bb721cabd81eb534f92ac3e86c8e333c, type: 3}
 --- !u!1 &835161719
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: bb721cabd81eb534f92ac3e86c8e333c, type: 3}
 --- !u!1 &1118436123
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
 --- !u!1 &1343084778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
 --- !u!1 &1406228271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
 --- !u!1 &1475928789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475928791}
   - component: {fileID: 1475928790}
+  - component: {fileID: 1475928792}
   m_Layer: 0
   m_Name: boat
   m_TagString: boat
@@ -1254,6 +1261,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1475928792
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475928789}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1510207763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: bb721cabd81eb534f92ac3e86c8e333c, type: 3}
 --- !u!1 &1563709610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: bb721cabd81eb534f92ac3e86c8e333c, type: 3}
 --- !u!1 &1588399981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
 --- !u!1 &1746883897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +1867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
 --- !u!1 &1892030023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,6 +1982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
 --- !u!1 &1983791068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,3 +2215,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a428154de388994d8a0fd0a11b64027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
