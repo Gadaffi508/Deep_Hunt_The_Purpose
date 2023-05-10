@@ -4,29 +4,21 @@ using UnityEngine;
 
 public class tower : MonoBehaviour
 {
-    private Color red = Color.red;
-    private Color black = Color.black;
-
     SpriteRenderer sr;
     public GameObject Tower;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        sr.GetComponent<SpriteRenderer>().color = red;
         gameObject.SetActive(false);
     }
     private void OnMouseEnter()
     {
-        sr.GetComponent<SpriteRenderer>().color = black;
+        sr.color = Color.black;
     }
     private void OnMouseExit()
     {
-        sr.GetComponent<SpriteRenderer>().color = red;
-    }
-    private void OnDisable()
-    {
-        sr.GetComponent<SpriteRenderer>().color = red;
+        sr.color = Color.red;
     }
     private void OnMouseDown()
     {
@@ -37,6 +29,10 @@ public class tower : MonoBehaviour
         }
         Instantiate(Tower, transform.parent.transform.position, Quaternion.identity);
         
+    }
+    private void OnDisable()
+    {
+        sr.color = Color.red;
     }
 
 }

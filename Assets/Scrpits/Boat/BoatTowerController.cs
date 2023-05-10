@@ -7,9 +7,13 @@ using UnityEngine.EventSystems;
 public class BoatTowerController : MonoBehaviour
 {
     public GameObject[] tower;
-
     private void OnMouseDown()
     {
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("kule");
+        foreach (GameObject _tower in towers)
+        {
+            _tower.SetActive(false);
+        }
         foreach (GameObject circle in tower)
         {
             circle.SetActive(true);
