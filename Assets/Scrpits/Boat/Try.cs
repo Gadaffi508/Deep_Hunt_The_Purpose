@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tower : MonoBehaviour
+public class Try : MonoBehaviour
 {
-    public GameObject Tower;
-
-    void Start()
-    {
-        gameObject.SetActive(false);
-    }
+    public LayerMask moveObjectLayer;
+    public Camera cam;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -17,13 +13,12 @@ public class tower : MonoBehaviour
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = Vector2.zero;
 
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, direction, float.MaxValue);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, direction, float.MaxValue, moveObjectLayer);
 
             if (hit.collider != null)
             {
-                Debug.Log(hit.collider);
+                Debug.Log(hit.collider.name);
             }
         }
     }
-
 }
