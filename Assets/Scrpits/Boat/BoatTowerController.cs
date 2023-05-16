@@ -7,18 +7,9 @@ using UnityEngine.EventSystems;
 
 public class BoatTowerController : MonoBehaviour
 {
+    public GameObject[] towerT;
     public LayerMask OpenTowerObject;
-    public LayerMask CloseTowerObject;
 
-    public GameObject[] tower;
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("kuleA"))
-        {
-            Destroy(gameObject);
-        }
-    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -30,23 +21,23 @@ public class BoatTowerController : MonoBehaviour
 
             if (hit.collider != null)
             {
-                GameObject[] towers = GameObject.FindGameObjectsWithTag("kule");
-                foreach (GameObject _tower in towers)
+                GameObject[] Towers = GameObject.FindGameObjectsWithTag("kule");
+                foreach (var tower in Towers)
                 {
-                    _tower.SetActive(false);
+                    tower.SetActive(false);
                 }
-                foreach (GameObject circle in tower)
+
+                foreach (var towers in towerT)
                 {
-                    circle.SetActive(true);
+                    towers.SetActive(true);
                 }
             }
-            RaycastHit2D hot = Physics2D.Raycast(mousePosition, direction, float.MaxValue, CloseTowerObject);
-            if (hot.collider != null)
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            foreach (GameObject circle in towerT)
             {
-                foreach (GameObject circle in tower)
-                {
-                    circle.SetActive(false);
-                }
+                circle.SetActive(false);
             }
         }
     }
