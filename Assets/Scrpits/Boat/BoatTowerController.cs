@@ -5,10 +5,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BoatTowerController : MonoBehaviour
+public abstract class BoatTowerController : MonoBehaviour
 {
-    public GameObject[] towerT;
     public LayerMask OpenTowerObject;
+
+    public abstract void TowerBuilt();
+    public abstract void CloseTower();
 
     private void Update()
     {
@@ -21,24 +23,12 @@ public class BoatTowerController : MonoBehaviour
 
             if (hit.collider != null)
             {
-                GameObject[] Towers = GameObject.FindGameObjectsWithTag("kule");
-                foreach (var tower in Towers)
-                {
-                    tower.SetActive(false);
-                }
-
-                foreach (var towers in towerT)
-                {
-                    towers.SetActive(true);
-                }
+                hit.collider.GetComponent<BoatTowerController>().TowerBuilt();
             }
         }
         if (Input.GetMouseButtonDown(1))
         {
-            foreach (GameObject circle in towerT)
-            {
-                circle.SetActive(false);
-            }
+            CloseTower();
         }
     }
 }

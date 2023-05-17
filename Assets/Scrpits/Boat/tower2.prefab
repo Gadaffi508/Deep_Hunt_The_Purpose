@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2073234972237509592}
   - component: {fileID: 611279807243596331}
   - component: {fileID: -4681316197809774689}
-  - component: {fileID: 6160853166693968548}
   - component: {fileID: -4782367536651989345}
+  - component: {fileID: -2939414272682077894}
   m_Layer: 0
   m_Name: tower2
   m_TagString: kuleA
@@ -113,18 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6160853166693968548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4942850376932654495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8b30976b70c0644d89414107342cd9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-4782367536651989345
 Rigidbody2D:
   serializedVersion: 4
@@ -146,3 +134,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-2939414272682077894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4942850376932654495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9025c6b3818bc29438d6df7bdce7fd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyTower: 40

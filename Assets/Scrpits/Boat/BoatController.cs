@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class BoatController : MonoBehaviour
 {
+    public static BoatController current;
     [Header("Controller")]
     [Space]
     public Rigidbody2D rb;
@@ -20,12 +21,11 @@ public class BoatController : MonoBehaviour
 
     [Space]
     [Header("Gold")]
-    public int gold;
+    public  int gold;
 
-    Try tow;
-
-    private void Start()
+    private void Awake()
     {
+        current = this;
         rb = GetComponent<Rigidbody2D>();
     }
 

@@ -2,25 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tower : MonoBehaviour
+public class tower : BoatTowerController
 {
-    public GameObject Tower;
-    public LayerMask MeLayer;
+    public GameObject[] Tower;
 
-    private void Update()
+    public override void CloseTower()
     {
-        if (Input.GetMouseButtonDown(0))
+        foreach (GameObject tower in Tower)
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 direction = Vector2.zero;
+            tower.SetActive(false);
+        }
+    }
 
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, direction, float.MaxValue, MeLayer);
-
-            if (hit.collider != null)
-            {
-                Instantiate(Tower,transform.parent.transform.position,Quaternion.identity);
-                Destroy(GetComponentInParent<BoatTowerController>().gameObject);
-            }
+    public override void TowerBuilt()
+    {
+        foreach (GameObject tower in Tower)
+        {
+            tower.SetActive(true);
         }
     }
 }
