@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - WaterColllider
+  - "Z\u0131pk\u0131n"
+  - boat
+  - BoatController
+  - material
+  - ground
+  - Enemy
+  - Deniz
+  - Map
+  - kule
+  - kuleA
   layers:
   - Default
   - TransparentFX
@@ -11,16 +22,16 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Challange
+  - Property
+  - boat
+  - Tower
+  - Tower1
+  - Tower2
+  - Tower3
+  - Tower4
+  - Tower5
+  - Tower6
   - 
   - 
   - 
